@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-activityplannerapp-dev-2a1e5-authRole",
-      "UnauthRoleArn": "arn:aws:iam::339713103968:role/amplify-activityplannerapp-dev-2a1e5-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::339713103968:role/amplify-activityplannerapp-dev-2a1e5-authRole",
+      "AuthRoleName": "amplify-activityplannerapp-dev-cad84-authRole",
+      "UnauthRoleArn": "arn:aws:iam::339713103968:role/amplify-activityplannerapp-dev-cad84-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::339713103968:role/amplify-activityplannerapp-dev-cad84-authRole",
       "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-activityplannerapp-dev-2a1e5-deployment",
-      "UnauthRoleName": "amplify-activityplannerapp-dev-2a1e5-unauthRole",
-      "StackName": "amplify-activityplannerapp-dev-2a1e5",
-      "StackId": "arn:aws:cloudformation:us-west-1:339713103968:stack/amplify-activityplannerapp-dev-2a1e5/ce22b450-4eb6-11ef-b5df-02ebfd2bcd1b",
-      "AmplifyAppId": "d15s2fbt8jfxxq"
+      "DeploymentBucketName": "amplify-activityplannerapp-dev-cad84-deployment",
+      "UnauthRoleName": "amplify-activityplannerapp-dev-cad84-unauthRole",
+      "StackName": "amplify-activityplannerapp-dev-cad84",
+      "StackId": "arn:aws:cloudformation:us-west-1:339713103968:stack/amplify-activityplannerapp-dev-cad84/9b844c80-4fd2-11ef-8728-065e33aee943",
+      "AmplifyAppId": "d1a3g4ym388dpg"
     },
     "categories": {
       "auth": {
-        "activityplannerapp21622bf6": {}
+        "activityplannerappc20b1371": {}
       }
     }
   }

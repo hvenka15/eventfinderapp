@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { Authenticator, Flex, Link, View } from "@aws-amplify/ui-react";
+import { Amplify } from "aws-amplify";
+import "@aws-amplify/ui-react/styles.css";
+import outputs from "./aws-exports.js";
+import { useAuthAtom } from "./sharedAtomVariables.js";
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from "react-router-dom";
+import { Nav } from "./Nav.js";
+import { Footer } from "./Footer.js";
+import { Home } from "./Home.js";
+import { History } from "./History.js";
+import { Account } from "./Account.js";
+import { Explore } from "./Explore.js";
 
-function App() {
+Amplify.configure(outputs);
+
+function Layout() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Flex direction={"column"} padding={10} height={"100%"} className="root-layout">
+      <Nav />
+      <View as={"main"} flex={"1 1 auto"}>
+        <Outlet />
+      </View>
+      <Footer />
+    </Flex>
   );
 }
 
-export default App;
+const router = createBrowserRouter([
+  { path: "/", element: <Navigate to={"/home"} /> },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "/home", element: <Home /> },
+      { path: "/explore", element: <Explore /> },
+      { path: "/account", element: <Account /> },
+      { path: "/history", element: <History /> },
+    ],
+  },
+]);
+
+export default function App({ user }) {
+  const [auth, setAuth] = useAuthAtom();
+  return (
+    <View margin={"auto"} className="app-authenticator" display={"grid"} height={"100%"}>
+      <Authenticator>
+        {({ signOut, user }) => {
+          if (user && !auth.user) {
+            setAuth({ user, signOut });
+            console.log("fired.updateuser", { auth, user });
+          }
+
+          if (!user && auth.user) {
+            setAuth({ user, signOut: () => ({}) });
+          }
+          return <RouterProvider router={router} />;
+        }}
+      </Authenticator>
+    </View>
+  );
+}

@@ -1,3 +1,18 @@
+## Project Description (ActivityPlanner)
+
+### Goals/Feature
+    1. guest can sign in and become user
+    2. do simple user things (change password,...)
+    3. browse activities by interest and location
+        - activities page + [filter activites list{location,interest}, add,create,ask question]
+        4. create activities for a given location with date and time
+        5. users can bookmark activites in their account
+        6. users can review their book marked activities
+        7. users can interact with other members sharing he same activity ( activity interaction rooms/halls)
+
+## Specific goals
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
