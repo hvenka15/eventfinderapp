@@ -63,7 +63,7 @@ const useActivities = () => {
     setActivites((prev) => prev.filter((_act) => act.id !== _act.id));
   };
 
-  const dispatch = (/** @type {{[key:'deleteActivity'|'updateActivity'|'upsertActivity'|]:(data)=>null}} */ callbackfn, activity) => {
+  const dispatch = (/** @type {(activites:{deleteActivity:typeof deleteActivity,upsertActivity:typeof upsertActivity})=>any} */ callbackfn, activity) => {
     callbackfn({ deleteActivity, upsertActivity })(activity);
     //refresh out activities list
   };

@@ -42,8 +42,13 @@ const router = createBrowserRouter([
 export default function App({ user }) {
   const [auth, setAuth] = useAuthAtom();
   return (
+
     <View margin={"auto"} className="app-authenticator" display={"grid"} height={"100%"}>
+
+       
+ 
       <Authenticator>
+
         {({ signOut, user }) => {
           if (user && !auth.user) {
             setAuth({ user, signOut });
@@ -59,3 +64,4 @@ export default function App({ user }) {
     </View>
   );
 }
+
